@@ -20,8 +20,8 @@ export const variantsHome = tv({
     contentSup: 'flex flex-col lg:flex-row items-center gap-8 py-6',
     contentSub: 'flex flex-col lg:flex-row items-start gap-8 py-16',
     title: 'w-full text-center lg:text-left tracking-wide max-w-72 text-4xl font-medium',
+    dev: 'w-full lg:max-w-72 flex flex-col gap-8',
     repo: 'w-full flex flex-col rounded px-6 border border-dracula-line divide-y divide-dracula-line bg-dracula-line/10',
-    owner: 'w-full lg:max-w-72 flex flex-col gap-8',
   }
 })
 
@@ -37,7 +37,6 @@ export const variantsSearch = tv({
 
 export const variantsDev = tv({
   slots: {
-    card: 'w-full lg:max-w-72 flex flex-col gap-8',
     wrapper: 'w-full flex flex-col gap-8 px-4 py-6 rounded border border-dracula-line bg-dracula-line/10',
     info: 'flex items-center gap-4',
     avatar: 'inline-block h-14 w-14 rounded-full',
@@ -49,7 +48,7 @@ export const variantsDev = tv({
     list: 'flex flex-col gap-2 text-sm',
     item: 'flex items-center gap-4',
     icon: 'w-4 h-4',
-    see: 'w-full flex items-center justify-center px-6 h-12 uppercase rounded font-medium bg-dracula-line/10 hover:bg-dracula-cyan hover:text-dracula-bg border border-dracula-cyan active:scale-95 transition ease-in-out duration-300',
+    profile: 'w-full flex items-center justify-center px-6 h-12 uppercase rounded font-medium bg-dracula-line/10 hover:bg-dracula-cyan hover:text-dracula-bg border border-dracula-cyan active:scale-95 transition ease-in-out duration-300',
   }
 })
 

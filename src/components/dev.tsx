@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { DevListProps } from '../types/devs'
+import { DevListProps } from '../types/dev'
 import { variantsDev } from '../styles/variants'
 import { BuildingOfficeIcon, CommandLineIcon, EnvelopeIcon, HeartIcon, LinkIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 
-const { wrapper, info, avatar, github, login, arrouba, bio, specs, list, item, icon, see } = variantsDev()
+const { wrapper, info, avatar, github, login, arrouba, bio, specs, list, item, icon, profile } = variantsDev()
 
 type DevProps = {
   devs: DevListProps
@@ -64,7 +64,7 @@ export const Dev = ({ devs }: DevProps) => {
           </ul>
         </div>
       </div>
-      <Link className={see()} to={`https://github.com/${devs.login}`} target='_blank'>
+      <Link className={profile()} to={`https://github.com/${devs.login}`} target='_blank'>
         Ver perfil GitHub
       </Link>
     </>

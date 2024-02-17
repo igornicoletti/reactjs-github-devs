@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { RepoListProps } from '../types/devs'
+import { RepoListProps } from '../types/repo'
 import { variantsRepo } from '../styles/variants'
 import { ArrowTopRightOnSquareIcon, LinkIcon, StarIcon } from '@heroicons/react/24/outline'
 

@@ -1,13 +1,14 @@
 import axios from 'axios'
 import { Dev } from '../components/dev'
 import { Repo } from '../components/repo'
+import { DevListProps } from '../types/dev'
+import { RepoListProps } from '../types/repo'
 import { FormEvent, useEffect, useState } from 'react'
-import { DevListProps, RepoListProps } from '../types/devs'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { variantsHome, variantsSearch } from '../styles/variants'
 
 const { form, field, write, magnifying, search } = variantsSearch()
-const { base, header, container, contentSup, contentSub, title, repo, owner } = variantsHome()
+const { base, header, container, contentSup, contentSub, title, repo, dev } = variantsHome()
 
 export function Root() {
   const [user, setUser] = useState<string>('')
@@ -49,7 +50,7 @@ export function Root() {
       <div className={container()}>
         <div className={contentSub()}>
           {devs &&
-            <div className={owner()}>
+            <div className={dev()}>
               <Dev devs={devs} />
             </div>
           }
