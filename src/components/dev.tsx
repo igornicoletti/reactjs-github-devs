@@ -17,7 +17,7 @@ export const Dev = ({ devs }: DevProps) => {
           <img className={avatar()} src={devs.avatar_url} alt={devs.name} />
           <div className={github()}>
             <h2 className={login()}>{devs.name}</h2>
-            <p className={arrouba()}>{devs.login}</p>
+            <p className={arrouba()}>@{devs.login}</p>
           </div>
         </div>
         {devs.bio && <p className={bio()}>{devs.bio}</p>}
