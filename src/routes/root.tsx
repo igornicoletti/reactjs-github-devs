@@ -4,9 +4,10 @@ import { Repo } from '../components/repo'
 import { DevListProps } from '../types/dev'
 import { RepoListProps } from '../types/repo'
 import { FormEvent, useEffect, useState } from 'react'
-import { variantsHome, variantsForm } from '../styles/variants'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { variantsHome, variantsForm, variantsNot } from '../styles/variants'
 
+const { not, first, work } = variantsNot()
 const { form, field, write, magnifying, add } = variantsForm()
 const { base, header, container, content, title, card, repo, dev } = variantsHome()
 
@@ -16,18 +17,18 @@ export function Root() {
   const [devs, setDevs] = useState<DevListProps>()
   const [repos, setRepos] = useState<RepoListProps[]>([])
 
-  const handleSearch = (e: FormEvent<HTMLFormElement>, user: string) => {
-    e.preventDefault()
-    setUser(user)
-    setInput('')
-  }
-
   useEffect(() => {
     if (user) {
       axios.get<DevListProps>(`https://api.github.com/users/${user}`).then(res => setDevs(res.data))
       axios.get<RepoListProps[]>(`https://api.github.com/users/${user}/repos`).then(res => setRepos(res.data))
     }
   }, [user])
+
+  const handleSearch = (e: FormEvent<HTMLFormElement>, user: string) => {
+    e.preventDefault()
+    setUser(user)
+    setInput('')
+  }
 
   return (
     <div className={base()}>
@@ -63,6 +64,12 @@ export function Root() {
               </ul>
             }
           </div>
+          {!devs && repos.length === 0 && (
+            <div className={not()}>
+              <p className={first()}>Encontre desenvolvedores em GitHub Devs</p>
+              <p className={work()}>GitHub Devs é uma ferramenta de pesquisa para encontrar usuários e repositórios no GitHub</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

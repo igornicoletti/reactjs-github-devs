@@ -66,3 +66,11 @@ export const variantsRepo = tv({
     icon: 'size-4',
   }
 })
+
+export const variantsNot = tv({
+  slots: {
+    not: 'w-full flex flex-col text-center gap-4 text-dracula-line',
+    first: 'text-xl uppercase font-medium',
+    work: 'font-medium',
+  }
+})
