@@ -69,7 +69,7 @@ export const variantsRepo = tv({
 
 export const variantsNot = tv({
   slots: {
-    not: 'w-full flex flex-col text-center gap-4 text-dracula-line',
+    not: 'w-full flex flex-col text-center gap-4 text-dracula-line pt-12 pb-4',
     first: 'text-xl uppercase font-medium',
     work: 'font-medium',
   }
